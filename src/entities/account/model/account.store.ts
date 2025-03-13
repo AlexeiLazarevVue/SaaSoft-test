@@ -12,10 +12,7 @@ export const useAccountStore = defineStore('account', {
         },
         saveAccount(index: number) {
             const savedAccounts = JSON.parse(localStorage.getItem('accounts')) || []
-            console.log({savedAccounts})
-            console.log({index})
             savedAccounts[index] = this.accounts[index]
-            console.log({savedAccounts})
 
             localStorage.setItem('accounts', JSON.stringify(savedAccounts));
         },

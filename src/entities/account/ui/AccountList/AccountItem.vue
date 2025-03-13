@@ -21,9 +21,6 @@ const showRequiredFieldsError = ref(false)
 const checkRequiredFields = () => {
   const requiredFields: (keyof Account)[] = ['value', 'password'];
   for (const field of requiredFields) {
-    console.log('fffffffff')
-    console.log(props.account.type)
-    console.log(props.account[field])
     if (!props.account[field] && !(field === 'password' && props.account.type === AccountTypes.LDAB)) {
       showRequiredFieldsError.value = true
       break
@@ -45,7 +42,7 @@ const checkErrorStatus = (field: keyof Account) => showRequiredFieldsError.value
                  v-model="account.tags"></TagsInput>
     </td>
     <td>
-      <AccountTypeSelector @onChange="(value) => {if(value === AccountTypes.LDAB) account.password = null
+      <AccountTypeSelector @onChange="(value) => {if(value === AccountTypes.LDAB) {account.password = null}
       checkRequiredFields()}" class="w-full" v-model="account.type"></AccountTypeSelector>
     </td>
     <td :colspan="account.type === AccountTypes.LDAB ? 2 : 1">
@@ -58,7 +55,7 @@ const checkErrorStatus = (field: keyof Account) => showRequiredFieldsError.value
                             :requiredError="checkErrorStatus('password')"
                             v-model="account.password"></AccountPasswordInput>
     </td>
-    <td><Icon class="cursor-pointer" @click="emit('onAccountDelete', accountIndex)" color="#fff" id="#trash"></Icon>
+    <td><Icon class="cursor-pointer" @click="emit('onAccountDelete')" color="#fff" id="#trash"></Icon>
     </td>
   </tr>
 </template>

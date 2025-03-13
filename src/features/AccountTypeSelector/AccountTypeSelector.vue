@@ -25,7 +25,7 @@ const value = computed({
 </script>
 
 <template>
-<Select class="w-[200px]" option-label="label" @change="(value) => emit('onChange', value)" option-value="value" v-model="value" :options="accountSelectorOptions"></Select>
+<Select class="w-[200px]" option-label="label" @change="(event) => emit('onChange', event.value)" option-value="value" v-model="value" :options="accountSelectorOptions"></Select>
 </template>
 
 <style scoped>

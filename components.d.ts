@@ -10,7 +10,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('primevue/button')['default']
     InputText: typeof import('primevue/inputtext')['default']
-    Panel: typeof import('primevue/panel')['default']
     Password: typeof import('primevue/password')['default']
     Select: typeof import('primevue/select')['default']
   }
