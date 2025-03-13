@@ -18,7 +18,7 @@ const accounts = computed(() => accountStore.accounts)
     <tr>
       <th class="w-[27%]">Метки</th>
       <th class="w-[20%]">Тип</th>
-      <th class="w-[27%]">Значение</th>
+      <th class="w-[27%]">Логин</th>
       <th class="w-[26%]">Пароль</th>
     </tr>
       <AccountItem v-for="(account, index) in accounts" @on-account-delete="accountStore.deleteAccount(index)" :account-index="index" :account="account"></AccountItem>

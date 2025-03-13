@@ -22,7 +22,7 @@ const value = computed({
 </script>
 
 <template>
-<Password @change="(event) => emit('onChange', event.target.value)" placeholder="Пароль" :required="requiredError" :invalid="requiredError" toggle-mask v-model="value"></Password>
+<Password maxlength="100" @change="(event) => emit('onChange', event.target.value)" placeholder="Пароль" :required="requiredError" :invalid="requiredError" toggle-mask v-model="value"></Password>
 </template>
 
 <style scoped>

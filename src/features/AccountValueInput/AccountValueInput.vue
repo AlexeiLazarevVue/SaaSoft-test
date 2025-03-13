@@ -17,7 +17,7 @@ const value = computed({
 </script>
 
 <template>
-<InputText placeholder="Значение" @change="(event) => emit('onChange', event.target.value)" required :invalid="requiredError" class="w-full" type="text" v-model="value"></InputText>
+<InputText maxlength="100" placeholder="Значение" @change="(event) => emit('onChange', event.target.value)" required :invalid="requiredError" class="w-full" type="text" v-model="value"></InputText>
 </template>
 
 <style scoped>
