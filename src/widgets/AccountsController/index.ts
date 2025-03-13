@@ -1,3 +1,3 @@
 import AccountsController from "./AccountsController.vue";
 
-export {AccountsController}
+export { AccountsController };

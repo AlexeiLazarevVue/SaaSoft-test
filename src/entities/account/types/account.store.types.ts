@@ -1,5 +1,5 @@
-import type {Account} from "./account.types.ts";
+import type { Account } from "./account.types.ts";
 
 export type AccountStoreState = {
-    accounts: Account[]
-}
+  accounts: Account[];
+};

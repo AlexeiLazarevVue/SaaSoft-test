@@ -1,33 +1,38 @@
 <script setup lang="ts">
-import {AccountTypes} from "../../entities/account/types/account.types.ts";
-import {computed} from "vue";
+import { AccountTypes } from "../../entities/account/types/account.types.ts";
+import { computed } from "vue";
 
 const accountSelectorOptions = [
   {
-    label: 'Локальный',
-    value: AccountTypes.LOCAL
+    label: "Локальный",
+    value: AccountTypes.LOCAL,
   },
   {
-    label: 'LDAB',
-    value: AccountTypes.LDAB
-  }
-]
+    label: "LDAB",
+    value: AccountTypes.LDAB,
+  },
+];
 type AccountTypeSelectorProps = {
-  modelValue: string
-}
-const props = defineProps<AccountTypeSelectorProps>()
-const emit = defineEmits(['update:modelValue', 'onChange'])
+  modelValue: string;
+};
+const props = defineProps<AccountTypeSelectorProps>();
+const emit = defineEmits(["update:modelValue", "onChange"]);
 
 const value = computed({
   get: () => props.modelValue,
-  set: (value) => emit('update:modelValue', value)
-})
+  set: (value) => emit("update:modelValue", value),
+});
 </script>
 
 <template>
-<Select class="w-[200px]" option-label="label" @change="(event) => emit('onChange', event.value)" option-value="value" v-model="value" :options="accountSelectorOptions"></Select>
+  <Select
+    class="w-[200px]"
+    option-label="label"
+    @change="(event) => emit('onChange', event.value)"
+    option-value="value"
+    v-model="value"
+    :options="accountSelectorOptions"
+  ></Select>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

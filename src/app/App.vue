@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {AccountsController} from "../widgets";
+import { AccountsController } from "../widgets";
 import IconSprite from "@src/shared/ui/IconSprite.vue";
 </script>
 

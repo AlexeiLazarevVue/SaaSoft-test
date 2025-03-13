@@ -2,10 +2,10 @@
 type SIconProps = {
   id: string;
   color?: string;
-  size?: string | number
+  size?: string | number;
 };
 const props = withDefaults(defineProps<SIconProps>(), {
-  size: 20
+  size: 20,
 });
 </script>
 

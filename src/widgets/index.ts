@@ -1,1 +1,1 @@
-export * from './AccountsController'
+export * from "./AccountsController";
